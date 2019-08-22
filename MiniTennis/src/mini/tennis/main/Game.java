@@ -6,6 +6,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class Game extends JPanel {
@@ -50,6 +51,11 @@ public class Game extends JPanel {
 	
 	public int getHeight() {
 		return this.height;
+	}
+	
+	public void gameOver() {
+		JOptionPane.showMessageDialog(this,"Game Over", "Game Over", JOptionPane.YES_NO_OPTION);
+		System.exit(ABORT);
 	}
 	
 	@Override
