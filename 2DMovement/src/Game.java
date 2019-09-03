@@ -1,5 +1,6 @@
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -10,6 +11,7 @@ public class Game extends JPanel {
 	private static final int WIDTH = 400;
 	private static final int HEIGHT = 400;
 	private Player player = new Player(this);
+	private Enemy enemy = new Enemy();
 	
 	
 	public Game() {
@@ -40,6 +42,18 @@ public class Game extends JPanel {
 		super.paintComponent(g);
 		Graphics2D gg = (Graphics2D) g;
 		player.paintComponent(gg);
+		if(enemy.isVisible()) {
+			enemy.paintComponent(gg);
+		}
+		checkCollision();
+	}
+	
+	public void checkCollision() {
+		Rectangle r1 = player.getBounds();
+		Rectangle r2 = enemy.getBounds();
+		if(r1.intersects(r2)) {
+			enemy.setVisible(false);
+		}
 	}
 	
 	public int getWidth() {

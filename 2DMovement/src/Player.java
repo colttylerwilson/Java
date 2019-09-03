@@ -1,4 +1,5 @@
 import java.awt.Graphics2D;
+import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 
 public class Player {
@@ -81,5 +82,9 @@ public class Player {
 		else {
 			return 30;
 		}
+	}
+	
+	public Rectangle getBounds() {
+		return new Rectangle(x,y,width,height);
 	}
 }
