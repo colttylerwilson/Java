@@ -12,6 +12,7 @@ public class Game extends JPanel {
 	private static final int HEIGHT = 400;
 	private Player player = new Player(this);
 	private Enemy enemy = new Enemy();
+	private Sword sword = new Sword(player);
 	
 	
 	public Game() {
@@ -42,6 +43,7 @@ public class Game extends JPanel {
 		super.paintComponent(g);
 		Graphics2D gg = (Graphics2D) g;
 		player.paintComponent(gg);
+		sword.paintComponent(gg);
 		if(enemy.isVisible()) {
 			enemy.paintComponent(gg);
 		}

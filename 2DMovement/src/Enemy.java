@@ -10,7 +10,7 @@ public class Enemy {
 	
 	public Enemy() {
 		x = 20;
-		y = 30;
+		y = 20;
 	}
 	
 	public Rectangle getBounds() {
